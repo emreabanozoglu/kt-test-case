@@ -27,6 +27,7 @@ public class MainTest extends BaseTest {
         homePage.verifyHomePage();
     }
 
+    /*
     @Test(priority = 1)
     public void login() {
         homePage.goToLoginPage();
@@ -60,5 +61,6 @@ public class MainTest extends BaseTest {
         Thread.sleep(1000);
         searchPage.verifyDeletedFavItem();
     }
+    */
 
 }
