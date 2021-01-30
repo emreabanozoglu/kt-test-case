@@ -13,8 +13,15 @@ public class BaseTest {
 
     @BeforeClass
     public void setUp() {
-        driver=new ChromeDriver();
         wait=new WebDriverWait(driver,15);
+        
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
 
         driver.manage().window().maximize();
     }
